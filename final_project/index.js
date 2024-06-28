@@ -26,7 +26,7 @@ app.use("/customer/auth/*", function auth(req, res, next) {
       .json({ message: "Access denied. No token provider." });
   }
   try {
-    const decode = jwt.verify(token, "Enter Secret key");
+    const decode = jwt.verify(token, "123456");
     req.user = decode;
     next();
   } catch (ex) {
